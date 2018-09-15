@@ -20,7 +20,7 @@
         {
             "type": "shell",
             "script": "packer/nginx.sh",
-            "execute_command": "echo 'packer' | sudo -S sh -c ' '"
+            "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
         }
     ]
 }

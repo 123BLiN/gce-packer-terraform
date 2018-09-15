@@ -12,9 +12,20 @@ Required permissions:
 ## Packer
 
 To build ubuntu image run:
-`packer build -var service_account_json="[some_path_to_your_created_service_account_key].json" .\packer\packer.json`
+```
+cd ./packer
+packer build -var service_account_json="[some_path_to_your_created_service_account_key].json" packer.json
+```
 (replace [some_path_to_your_created_service_account_key] with path to your actual key)
 
 ## Terraform 
 
-[TODO]
+```
+cd ./terraform
+terraform plan
+terraform apply
+```
+
+it will ask for a list of networks/IPs to allow access for - provide the list in the format: ["10.10.10.10/32","192.168.1.0/24"]
+
+URL to the default nginx page will be provided in the output. 
